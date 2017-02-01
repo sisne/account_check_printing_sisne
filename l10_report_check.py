@@ -149,7 +149,7 @@ class report_print_check(report_sxw.rml_parse):
 
     def fill_line(self,payment, amount_str):
         if payment.journal_id.type=='bank' and  payment.currency_id and  payment.currency_id.name=='DOP':
-            amount_str = amount_to_text().get_amount_to_text(math.floor(payment.amount),lang='es_AR')
+            amount_str = amount_to_text().get_amount_to_text(payment.amount,lang='es_AR')
         return amount_str and (amount_str+' ').ljust(200, LINE_FILLER) or ''
 
     def get_pages(self, payment):
