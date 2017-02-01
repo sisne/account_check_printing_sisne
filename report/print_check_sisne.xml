@@ -30,7 +30,7 @@
 			<t t-if="isinstance(page['amount'], str)"><t t-esc="page['amount']"/></t>
 		</div>
 		<div class="ckus_amount_in_word" t-esc="page['amount_in_word']"/>
-		<div class="ckus_memo" t-esc="page['memo']"/>
+
 	</div>
 	
 </xpath>
