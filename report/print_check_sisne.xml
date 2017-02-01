@@ -52,7 +52,7 @@
 
 		<table class="table table-bordered table-condensed stub_lines" t-if="page['stub_lines']">
 			<thead><tr>
-				<th class="text-left">F. Vencimiento</th>
+
 				<th class="text-left">Factura</th>
 				<th class="text-right">Monto Factura</th>
 				<th class="text-right">Balance</th>
@@ -64,7 +64,7 @@
 						<tr><th colspan="6"><t t-esc="stub_line['name']"/></th></tr>
 					</t>
 					<t t-if="not stub_line.get('header')"><tr>
-						<td class="text-left"><t t-if="stub_line['due_date']" t-esc="formatLang(stub_line['due_date'], date=True)"/></td>
+
 						<td class="text-left"><t t-esc="stub_line['number']"/></td>
 						<td class="text-right"><t t-esc="formatLang(stub_line['amount_total'], monetary=True, currency_obj=stub_line['currency'])"/></td>
 						<td class="text-right">
