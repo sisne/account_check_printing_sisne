@@ -23,7 +23,7 @@
 <xpath expr="//div[@class='ckus_check']" position="replace">
 
 	<div class="ckus_check">
-		<div class="ckus_date" t-esc="formatLang(page['payment_date'], date=True)"/>
+		<div class="ckus_date" t-esc="formatLang(page['payment_date'], date=True)" t-attf-style="font-size:16px"/>
 		<div class="ckus_payee_name" t-esc="page['partner_name']"/>
 		<div class="ckus_amount">
 			<t t-if="isinstance(page['amount'], float)"><t t-esc="formatLang(page['amount'])"/></t>
