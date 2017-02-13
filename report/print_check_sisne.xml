@@ -23,7 +23,7 @@
 <xpath expr="//div[@class='ckus_check']" position="replace">
 
 	<div class="ckus_check">
-		<div class="ckus_date" t-esc="formatLang(page['payment_date'], date=True)" t-attf-style="font-size:16px"/>
+		<div class="ckus_date" t-field="o.payment_date" t-field-options='{"format": "dd MM yyyy"}' t-attf-style="font-size:20px"/>
 		<div class="ckus_payee_name" t-esc="page['partner_name']"/>
 		<div class="ckus_amount">
 			<t t-if="isinstance(page['amount'], float)"><t t-esc="formatLang(page['amount'])"/></t>
@@ -77,7 +77,8 @@
 				<tr t-if="page['stub_cropped']"><td colspan="6" class="text-right">...</td></tr>
 			</tbody>
 		</table>
-
+		<div class="ckus_memo" t-esc="page['memo']" t-if="not page['stub_lines']"/>
+		
 	</div>
 	
 </xpath>
@@ -127,10 +128,9 @@
 			<t t-if="isinstance(page['amount'], float)"><t t-esc="formatLang(page['amount'], monetary=True, currency_obj=page['currency'])"/></t>
 			<t t-if="isinstance(page['amount'], str)"><t t-esc="page['amount']"/></t>
 		</div>
+	<div class="ckus_memo" t-esc="page['memo']" t-if="not page['stub_lines']"/>
 	</div>
-	
 </template>
-
 
 </data>
 </odoo>
