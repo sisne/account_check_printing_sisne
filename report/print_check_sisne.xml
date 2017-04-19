@@ -129,6 +129,7 @@
 			<t t-if="isinstance(page['amount'], str)"><t t-esc="page['amount']"/></t>
 		</div>
 	<div class="ckus_memo" t-esc="page['memo']" t-if="not page['stub_lines']"/>
+	<div t-field="o.journal_id"/>
 	</div>
 </template>
 
